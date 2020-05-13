@@ -1,0 +1,31 @@
+<!--Simulação de login em Javascript-->
+<script>
+
+var login = "Alura";
+var senha = "zequinha123";
+
+var max_tentativa = 3;
+var tentativa_atual = 1;
+
+
+while(tentativa_atual <= max_tentativa){
+    var login_informado = prompt("Digite seu Login: ");
+    var senha_informada = prompt("Digite sua Senha: ");
+
+    if(login_informado == login && senha_informada == senha){
+        alert("Bem vindo a "+ login);
+        tentativa_atual = max_tentativa;
+    }else{
+        if(tentativa_atual == 3){
+        alert("Excedeu número de tentativas !");
+    }else{
+        alert("Login ou senha inválidos, tente Novamente !");
+    }
+    
+    }
+    tentativa_atual++
+    }
+
+    
+
+</script>
