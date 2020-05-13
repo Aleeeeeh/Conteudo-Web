@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicios HTML</title>
+    <style>
+        #conteudo{
+            padding: 30px 0px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,8 +16,10 @@
     </header>
     <!--Quando clicarmos no link teste.html a pagina venha para o section conteudo, usando requisição ajax-->
     <nav>
+        <!--Quando startamos o server com http-server -c-1 . ele não guarda os arquivos, se estive exemplo -c10, ele
+        iria guardar os arquivos por 10 segundos-->
         <a href="teste.html">TESTE</a> |
-        <a href="teste2.html">TESTE2</a>
+        <a href="texto1.html">TESTE2</a>
     </nav>
     <section id="conteudo"></section>
     <footer>
