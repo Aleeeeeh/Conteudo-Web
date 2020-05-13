@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Exercicios</h1>
+    </header>
+    <!--Quando clicarmos no link teste.html a pagina venha para o section conteudo, usando requisição ajax-->
+    <nav>
+        <a href="teste.html">TESTE</a> |
+        <a href="teste2.html">TESTE2</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        <br>
+        Curso de web Moderno
+    </footer>
+    <script>
+        //Iremos pegar todos os links por isso passamos o 'a' no parametro
+        document.querySelectorAll('a').forEach(link => {          
+            const conteudo = document.getElementById('conteudo')
+            //Função para quando o usuário clicar
+            link.onclick = function (e) { //Parâmetro (e) é o evento
+                e.preventDefault() //Previne que o comportamento padrão ocorra, ou seja não irá para próxima página
+                
+                fetch(link.href) //Fetch usado para fazer a requisição, ele funciona com base em promise
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html) //Essas duas linhas pegamos o conteudo textual html
+            }
+        })
+
+    </script>
+</body>
+</html>
