@@ -1,0 +1,2 @@
+Sempre que startar o servidor colocar http-server -c-1 . para que ele não armazene arquivos, e rode como nodemon sempre
+que fizermos mudanças em algum arquivo ele atualize automaticamente no projeto em questão.
