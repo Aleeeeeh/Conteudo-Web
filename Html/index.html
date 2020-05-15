@@ -21,7 +21,9 @@
         <a href="teste.html">TESTE</a> |
         <a href="texto1.html">TESTE2</a> |
         <a href="listas.html">LISTAS</a> |
-        <a href="ListaAninhada.html">LISTA ANINHADA</a>
+        <a href="ListaAninhada.html">LISTA ANINHADA</a> |
+        <a href="links.html">LINKS</a> |
+        <a href="tabela.html">TABELA</a>
 
     </nav>
     <section id="conteudo"></section>
@@ -30,7 +32,8 @@
         Curso de web Moderno
     </footer>
     <script>
-        //Iremos pegar todos os links por isso passamos o 'a' no parametro
+        //Iremos pegar todos os links por isso passamos o 'a' no parametro, poderiamos tambem no param colocar '[link]'
+        //No html ficaria por exemplo <a href link="teste.html">TESTE</a>
         document.querySelectorAll('a').forEach(link => {          
             const conteudo = document.getElementById('conteudo')
             //Função para quando o usuário clicar

@@ -1,0 +1,59 @@
+<table>
+    <caption>Produtos</caption> <!--Caption o que representa a tabela (opcional)-->
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th> <!-- Table head -->
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr> 
+            <td>iPad</td>
+            <td>3289,00</td> <!-- td - table data -->
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+           <td>Sansung S9</td> 
+           <td>2649,00</td>
+           <td>8</td>
+           <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td> <!-- Colspan ocupando 3 espaços das colunas e rowspan ocupa linhas -->
+            <td>37637,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    caption{
+        font-weight:bold;
+        font-size:20px;
+    }
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px; 
+    }
+
+    thead tr {
+       border-bottom: solid 3px #444; /*border-bottom traça uma linha abaixo das linhas do thead */
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>
