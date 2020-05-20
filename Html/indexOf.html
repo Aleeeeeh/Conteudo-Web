@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexOf Exemplo</title>
+</head>
+<body>
+    <div>
+        <div>
+            <label for="string">Texto:</label>
+            <input type="text" id="string">
+        </div>
+        <div>
+            <label for="substring">Texto a ser encontrado:</label>
+            <input type="text" id="substring">
+        </div>
+        <div>
+            <br>
+            <button id="buscar" onclick="localizarString()">Verificar</button>
+            <span id="resultado"></span> <!-- Onde iremos exibir nosso resultado utilizando o innerHtml -->
+        </div>
+    </div>
+    <script>
+       function localizarString(){
+           var string = document.getElementById('string').value //Pegando os valores dessas strings
+           var substring = document.getElementById('substring').value
+
+           var posicao = string.indexOf(substring)//Dentro da string pegar uma substring ou seja o indice de onde comeca tal palavra no exemplo
+           var resultado
+
+           if(posicao === -1){
+               resultado = 'Elemento não encontrado no texto'
+           } else {
+               resultado = 'A posição do elemento é: ' + posicao
+           }
+           document.getElementById('resultado').innerHTML = resultado //Lembrando que indexOf é Case sensitive
+       }
+    </script>
+</body>
+</html>

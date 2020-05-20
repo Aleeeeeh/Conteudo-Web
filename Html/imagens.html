@@ -1,0 +1,112 @@
+<div wm-slider>
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da cidade"
+    height="342" width="513" title="Muro da cidade por Tarso Bessa"> <!-- title mostra nome ao encostar na imagem -->
+
+</p>
+
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="Intro Cod3r" height="342">
+</p>
+
+<p class="circular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+        alt="Rio de Janeiro" height="342">
+</p>
+
+<p class="texto">
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+        alt="Avatar" height="50" align="left">
+    Texto sdfsdf ds fsdf sdfsdf sdfsdf fssdsdf sdf sdfs df
+    sd sdf sdfsdf sdf sdfsdf sdf sd fs f sdf er fw r sd fasd
+    kjadshkjhd dkjheueuhek ekjhe kjehue ekjhe ekjh ekjheuekjhe
+    ekjhekjhe ekjhe ehekjhekjhe kjeh e ekejhek jehe hekjhe ee
+    ekjhe ee kjehkjhe kejhkjeh ee kejh e ekjhekjehe ekejhekejh
+    ekjhekjhe e ekjheekjhe ehekjh ee kejhekjhekjhe e ekjhek ee
+    ekjhekjh eee kjheekehekejhe e ekjehekhje ee
+</p>
+
+<p class="cidade"></p>
+
+<p><!--Mostrar a imagem de forma condicional, ou seja, se tiver no min 600px exiba senão exiba a última imagem 
+Exemplo em tela grande mostra cod3r com logo, menos de 600 mostrará apenas o logo-->
+    <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+            media="(min-width: 600px)">
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+    </picture>
+</p>
+</div>
+
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto {
+        width: 400px;
+    }
+
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;/*Repete a imagem verticalmente 'x', horizontalmente em 'y', no-repeat a imagem não irá repetir e ficará no canto superior esquerdo */
+        background-size: 200%;
+    }
+</style>
+<!-- Aplicando o Slider com javascript -->
+<script>
+    function mover(elem, inicio, fim, passo, callback){
+    const novoInicio = inicio - passo //Inicio do slider menos o tempo de uma imagem para outra
+     if(novoInicio >= fim){ //Ou seja quando chegar na última imagem
+        elem.style.left = novoInicio + 'px' //Recebendo o NovoInicio mais a unidade em pixel, px unidade que usaremos para mover as imagens
+        setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)//Irá se mover a cada 7 segundos
+    } else {
+        callback()
+    }       
+    }
+    /* --Testando a função mover --
+    const p = document.querySelector('[wm-slider] > p')
+    p.style.display = 'block'
+    mover(p, 1500, -520, 5, () => {
+        console.log('Terminou o Processo')
+    }) */
+
+    function slider(){
+        const elementos = document.querySelectorAll('[wm-slider] > p') //Todo paragrafo dentro de wm slider
+        const slides = Array.from(elementos) //Fazemos um array de imagens
+        exibirSlides(slides,slides[0]) 
+    }
+    function exibirSlides(slides,slide){
+        slide.style.display = 'block'
+
+        const inicio = innerWidth //Pega toda a largura da interna da minha página
+        const fim = -slide.clientWidth //Pega a largura da tag p, ou seja da nossa imagem
+
+        slide.style.left = `${inicio}px` //Apartir do inicio utilizando px para mover
+
+        //Quando chegar no ultimo indice do array voltar para o primeiro
+        mover(slide, inicio, fim, 2, () => {
+            exibirSlides(slides, getProximo(slides, slide)) //Função que recebe os slides, e uma função para calcular o prox slide
+        })
+    }
+    //indexOf é usado para verificar a existência de um termo, ou seja verificando a imagem atual dentro da lista
+    function getProximo(lista, atual){
+        const i = lista.indexOf(atual) + 1  //indexOf retorna o primeiro elemento do array, senao retorna -1
+        return i < lista.length ? lista[i] : lista[0]
+    } 
+    slider()
+</script>

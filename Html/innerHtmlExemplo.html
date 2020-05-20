@@ -1,0 +1,20 @@
+<!-- Esse e alguns outros arquivos, precisa acessar através do link pára funcionar localhost:8080/innerHtmlExemplo.html
+Pois no index estamos com base em requisições que impedem que funcione o criamos em nossa js nesse arquivo -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerHtml Exemplo</title>
+</head>
+<body>
+    <p id="demo" onclick="myfunction()">Clique neste conteudo HTML e veja um Exemplo de como funciona o innerHTML
+        ,através de localhost:8080/innerHtmlExemplo.html, pois por aqui não permite por conta da requisição ajax.</p>
+    <!-- Ao clicar no texto, irei retornar um conteudo html seja armazenado em uma variavel ou por escrito -->
+    <script>
+        function myfunction(){
+            document.getElementById('demo').innerHTML = 'Olha só, innerHtml atribuiu este texto como resultado por clicar no outro texto.'
+        }
+    </script>
+</body>
+</html>
