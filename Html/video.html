@@ -1,0 +1,70 @@
+<!--controls mostra a barra de play, pause, maximixar tela etc...autoplay quando entro video ja inicia sozinho,
+colocando constrolsList="nodownload", irá retirar a opçao de download da tela -->
+<video id="meuVideo" width="800" height="450" controls>
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        Seu browser não suporta a tag video
+</video>
+
+<!--meuVideo associada a tag acima, 1° div responsável o progresso como um todo, e 2°div por preencher com uma cor a barra-->
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+<!-- Wm-play são propriedades genéricas melhores de usadas do que atribuir um ID, ambos associados ao id do video -->
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style> 
+/* A barra de progresso em si */
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+    /* A cor de background e cor de carregamento da barra, para isso entramos na div dentro da classe progresso  */
+    .progresso > div {
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+    
+ <script>
+     function configurarVideo(id){
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false //Com isso quando clicarmos com botao direito no video não tera opções, evita de baixarem seu video
+        //Lógica para dar play no video usando métodos da API do javascript
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+
+        //Cálculo do percentual da barra de progresso do video
+        setInterval(() => {
+          const percentual = (video.currentTime / video.duration) * 100
+          const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`) //Div que está dentro de progresso
+
+          valorDiv.style.width = `${percentual}%` //Com isso a barra irá receber o percentual e começar a andar
+          //Valor explicito para saber quantos porcentos está
+          valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500)//Em quanto em quanto tempo o setInterval ficará monitorando progresso do video, 500 milisegundos
+
+     }
+     configurarVideo('meuVideo')
+ </script>
+ <!-- Uma das maneira de dar play e pause é utilizando desse métodos do próprio javascript, e atribuindo ao onclick 
+    no proprio botao colocando onclick="playvid()" e pausevid() 
+<script>
+    var vid = document.getElementById('meuVideo')
+
+    function playvid(){
+        vid.play()
+    }
+    function pausevid(){
+        vid.pause()
+    }
+</script>
+ -->
