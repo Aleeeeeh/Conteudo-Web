@@ -5,7 +5,17 @@
     <meta charset="UTF-8">
     <title>Herança</title>
     <style>
-        /* ... */
+        /*Exemplo de herança é estilizar o body, e tudo que está dentro dele irá herdar a maioria dos atributos*/
+        body{
+            font-family: monospace;
+            font-size: 40px;
+            border: solid 5px red; /* Excessao */
+            padding:50px; /* Excessao */
+        }
+
+        div{
+            border: inherit; /* Palavra reservada para herdar atributos de outro classe ou tag, usamos para as que não herda por padrao */
+        }
     </style>
 </head>
 
