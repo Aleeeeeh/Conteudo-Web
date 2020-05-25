@@ -6,7 +6,28 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* section > :nth-child(odd),ul{ odd todo filho impar aplica, even todo filho par, ótimo para aplicar efeito zebra em tabelas
+                ,ul aplicar todo filho impar de ul, se colocar espaço nth-child(odd) label, irá aplicar apenas no label ou seja no nome do elemento
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* [feira]{ Propriedade colocamos em [], feira aplica em todos que estiverem com feira senao especificar tipo
+                           [feira=casa], [feira*=sa] toda palavra que conter sa aplica, ca.sa. e empre.sa.
+                           [feira~=escritorio] para aplicar ja que nesse caso temos a palavra empresa na frente
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* p + ul{ Se o que vir depois de p for ul irá aplicar, senão usar p ~ ul, então a 1° ul que achar depois de p
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* *{   "*" seletor universal todo elemento do documento ficar amarelo com fundo coral
+            color: #ff0;
+            background-color: #f77;
+        } */
     </style>
 </head>
 
@@ -29,7 +50,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'><!--Nolabel para section em si não ficar como primeiro filho -->
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
