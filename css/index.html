@@ -26,7 +26,7 @@
         }
         
         .menu-principal {
-            min-width: 400px;
+            min-width: 400px; /* Largura minima e não fixa */
             text-align: center;
         }
         
@@ -41,7 +41,7 @@
         .menu-principal nav {
             display: inline-block;
             background-color: #fff;
-            min-width: 198px;
+            min-width: 198px; /* Inspencionando vimos que a nav tem 200, como colocamos 198px, ficou 2px de sobra com linha */
         }
         
         .menu-principal a {
@@ -78,7 +78,8 @@
                 <a href="./tamanhoBox.html">Box Sizing</a>
                 <a href="./overflow.html">Overflow</a>
                 <a href="./float.html">Float</a>
-            </nav>
+            </nav><!-- O fato de aparecer a linha na tabela, é por conta desse espaço vazio entre as navegações
+            e na classe de menu principal utilizando inline-block -->
             <nav>
                 <a href="./cores.html">Cores</a>
                 <a href="./unidades1.html">Unidades #01</a>

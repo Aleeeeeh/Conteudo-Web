@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        /* Podemos colocar em um seletor universal *, para aplicar o border-box, sempre que estipularmos uma % para um
+        elemento, e aplicarmos padding, borda etc...e não extrapolar */
         body {
             font-size: 45px;
+            margin: 0;
+        }
+        /* Width 100%, no momento em que aplicamos o padding e a borda isso por extrapolar, porem com a propriedade 
+        box-sizing:border-box, conseguimos colocar tudo isso dentro dos 100%, e não ficará com scroll */
+        div{
+            background-color: deepskyblue;
+            width: 100%;
+            height: 100%;
+            padding: 100px;
+            border:solid 20px;
+            box-sizing: border-box; /* Coloca o padding e a borda dentro dos 100%, evitando scroll */
         }
     </style>
 </head>

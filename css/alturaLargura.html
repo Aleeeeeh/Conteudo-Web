@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html{
+            height: 100%;
+        }
         body {
             font-size: 40px;
             background-color: coral;
+            height: 100%;
+            margin: 0;
         }
 
         div {
@@ -17,12 +22,19 @@
         span {
             background-color: dodgerblue;
         }
+        div, span{
+            width: 49%;
+            /* display:block;  Span é inline por padrão então para que ambos peguem o width colocar block  */
+            height: 250px; /* A div e o span irá crescer, mas se colocarmos em % não, pois o body ocupa pouco espaço assim 
+            como o html, para funcionar atribuir height 100 para ambos que são os parents */
+            height: 50%;
+            display: inline-block;
+        }
     </style>
 </head>
 
-<body>
-    <div>Título</div>
-    <span>Subtítulo</span>
+<body><!-- div e span lado a lado dessa forma, com inline-block e width deixando 1% de folga temos uma linha ao meio -->
+    <div>Título</div> <span>Subtítulo</span>
 </body>
 
 </html>

@@ -5,7 +5,27 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+         body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul { padding: 0; }
+        div { background-color: seagreen; }
+        span { background-color: dodgerblue; }
+        li { background-color: purple; }
+        /* Aplica para os três, lembrando que o span tem um display padrão que não ocupa 100% */
+        div, span, li {
+            width: 50%;
+            width: 200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: inline; /* Inline mesma linha, porem ul é block, por isso aparecerá na linha de baixo com as li */
+            display: block; /* Quebra de linha, cada ocupará um linha */
+            display: inline-block; /* Mesma função do inline-block, porém aceita os atributos tipo height,width etc... */
+        }
     </style>
 </head>
 

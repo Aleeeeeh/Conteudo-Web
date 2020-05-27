@@ -7,8 +7,12 @@
         div {
             font-size: 40px;
             height: 100px;
-            width: 260px;
+            width: 260px; /* Se tiramos a largura o texto pode fica dentro da borda normalmente */
             border: solid 3px;
+            /* overflow: hidden; /Todo item que extrapolar fora do conteudo não irá aparecer  */
+            /* overflow: scroll; Conteudo extrapolar, aplique um scroll para navegar e ver todos elementos*/
+            /* overflow-x:scroll; Se movimenta pelos lados apenas*/
+            /* overflow-y: hidden; E o eixo y não aparecerá */
         }
     </style>
 </head>
