@@ -11,7 +11,7 @@ li{
 
 .tag{
     border:solid 4px;
-    margin: 5px;
+    margin: 5px; /* Quando se tem apenas um valor chamamos de shortcut que aplica nos 4 lados */
 }
 
 .tag label{

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<!-- Margin colapse quando uma margem de sobrepõe a outra -->
 <head>
     <meta charset="UTF-8">
     <title>Margin</title>
@@ -28,6 +28,7 @@
         }
 
         /* 
+        Formas de não acontecer de haver sobreposição das margens
             float: left / right
             position: absolute
             display: inline-block
@@ -35,7 +36,8 @@
     </style>
 </head>
 
-<body>
+<body><!-- Exemplo, entre o conteudo 1 e 2 temos uma div vazia com borda invisivel, então conteudo 1 e 2 irá sobrepor 
+essa margem, dando a impressão de realmente não haver nada entre os elementos -->
     <div class="m30">Conteúdo 1</div>
     <div class="m30" style="border: none"></div>
     <div class="m30">Conteúdo 2</div>
