@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
-
+<!-- Unidades absolutas px,cm,mm, unidades relativas viewport"vh,vw,vmin,vmax", e fonts como REM  e EM -->
 <head>
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        /* vh e vw, exemplo pegamos altura e dividimos por 100, então 1vh temos 1/100avos da altura, se colocarmos 
+        100vh seria 100% da altura--- Rem faz referência ao elemento de mais alto nivel, e o EM funciona de forma 
+        que se o elemento pai tem 10px, e colocarmos 2em no filho esse ficará com 20px  */
+
+        .unidades-absolutas {
+            position: absolute;
+            font-size: 40px; /* Aqui ja temos tamanho absoluto,ou seja independente do zoom que der na pagina vai manter 40px, ao contrário do EM que de acordo com zoom ele varia o tamanho */
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* pouco usado */
+            height: 20mm;  /* pouco usado */
+            top: 150px;
+            left: 200px;
+        }
+
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4em; /* Fonte relativa é bom pois se adapta de acordo com o zoom que dermos na página */
+            padding: 5%; /* Porcentagens tambem varia de acordo com tamanho da página */
+            border: solid 1vw #222; /* Vw relativa, ou seja é 1/100 avos do tamanho da página, de acordo com o tamanho que a página ficar ela vai alterando de modo que fique 1/100 avos da página */
+            margin: .8%;
+            width: 20vw;/* 20% da largura da página */
+            height: 15vh;/* 15% da altura da página */
+            bottom: 5%;
+            right: 5%;
+        }
     </style>
 </head>
 

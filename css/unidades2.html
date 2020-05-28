@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <title>Unidades #02</title>
     <style>
-        /* ... */
+        *{
+            margin: 0;
+        }
+        .fora {
+            position: relative;/* Posição relativa de acordo  */
+            background-color: orange;
+            height: 400px;
+            width: 400px;
+            padding: 50px;
+        }
+
+        .dentro {
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: static; /*Padrao, quando não colocamos o position por padrão é static*/
+            position: relative; /* conteudo */
+            position: absolute; /* conteudo + padding*/
+            position: fixed; /* Com base em viewport, será aplicado a porcentagens acima */
+        }
     </style>
 </head>
-<body>
+<body><!-- A div vem com 100% de largura padrão ja que é display block, porém não possui altura, passa a ter altura do elemento que colocarmos dentro dela -->
     <div class="fora">
         <div class="dentro"></div>
     </div>
