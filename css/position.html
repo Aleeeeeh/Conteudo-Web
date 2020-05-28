@@ -5,7 +5,62 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+        .static{/* Position static ele mantém a posição padrão, e não se aplica o top, left, etc... */
+            top: 100px;
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed{/* Posição fixa, 30px do fim da página colado a direita com fundo tomato, de forma fixa */
+            position: fixed;
+            bottom: 30px;
+            right: 0px;
+            background: tomato;
+        }
+
+        .relative1{/* Se posiciona com relação ao elemento anterior,como fixed saiu, será o Static */
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color:seagreen;
+        }
+
+        .absolute1{/* Independente dos outros elementos ele se posiciona, mesmo se acabar ficando por cima dos demais */
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+        .relative2{/* No exemplo relativo ao absolute1 */
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+        /* Se posicionará dentro da div relative2, pois esta como relative, senão iria se posicionar pela página como um todo */
+        .absolute2{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky{/* Funciona de modo que quando subirmos a tela, o elemento fique travado a 10px do top */
+            position: -webkit-sticky;/*Necessário pelo navegador safari */
+            position: sticky;
+            background-color: #777;
+            top: 10px;
+        }
     </style>
 </head>
 

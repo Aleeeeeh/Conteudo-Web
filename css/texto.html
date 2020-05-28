@@ -16,6 +16,61 @@
             flex-direction: column;
             align-items: center;
         }
+
+        div {
+            font-size: 50px;
+        }
+        
+        p {
+            /* valores padrões */
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /* unidades absolutas */
+            font-size: 100px; /* tamanho do pixel é relativo */
+            font-size: 72pt; /* pontos */
+            font-size: 1in; /* polegada */
+
+            /* unidades relativas, para testar o REM podemos atribuir fonte-size:20px para o html e ver que o REM Irá multiplicar em cima desse novo valor*/
+            font-size: 2.2em;/*Pega como referência ja que a tag p esta dentro da div, os 50px, ou seja 2.2 x 50px */
+            font-size: 2.2rem;/* Pega como referência o html, ou seja multiplica de acordo com tamanho do documento em si*/
+            font-size: 50vh;
+            font-size: 10vw;
+
+            /* Fontes, com virgula, o interpretador irá procurar a primeira fonte senão achar irá exibir a segunda */
+            font-family: monospace;
+            font-family: Georgia, serif;
+            font-family: Verdana, sans-serif;
+            font-family: 'Indie Flower', cursive;
+
+            font-weight: 100;
+            font-style: italic;
+            text-transform: uppercase;
+            /* text-decoration: overline underline line-through; --Linha em cima, no meio ou embaixo do texto*/
+            word-spacing: 10px;/* Espaçamento entre as palavras */
+            letter-spacing: 20px;/*Espaçamento entre as letras */
+            line-height: 2.5em; /* Espaçamento entre as linhas de texto */
+            text-align: center;
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000; /* Aplica efeito de sombra no caso no botão */
+        }
+
+        .destaque:active {
+           box-shadow: none; 
+        }
     </style>
 </head>
 
