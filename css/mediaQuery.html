@@ -12,6 +12,18 @@
             border: solid 5px;
             display: none;
         }
+        /* Media query usado para fazer a responsividade do site, acima de 600px display:none, dentro disso display block */
+        @media(max-width: 600px){
+            .muito-pequeno{display: block;}
+        }
+        /* orientation:portrait "retrato, acima de 1000 none, como landscape "Paisagem" irá mostrar normalmente */
+        @media(max-width: 1000px),(orientation:portrait){
+            .pequeno-retrato{display:block;}
+        }
+        /* Estar entre 500px á 1000px, menor ou maior que esses valores estará como display none */
+        @media(min-width: 500px) and (max-width: 1000px){
+            .intervalo{display: block;}
+        }
     </style>
 </head>
 <body>
