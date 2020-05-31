@@ -60,7 +60,7 @@
        .cabecalho a{
            text-decoration: none;
            color: #eee;
-           font-size:1.3em;
+           font-size:1.3em; /*Multiplica por 16 font-size padrão do header.cabecalho ficando assim 20.8px */
        }
        .autenticacao{
            float: right;
@@ -144,7 +144,7 @@
             const oldMENU = document.querySelector(`.menu a[href='#${oldURL}']`)
             const newMENU = document.querySelector(`.menu a[href='#${newURL}']`)
 
-            oldMENU && oldMENU.classList.remove('selected') //Remove para que o próximo link fique selecionado
+            oldMENU && oldMENU.classList.remove('selected') //Remove para que o próximo link fique selecionadoj
             newMENU && newMENU.classList.add('selected')
         }
     </script>

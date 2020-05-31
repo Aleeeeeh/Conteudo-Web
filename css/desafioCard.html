@@ -5,7 +5,52 @@
     <meta charset="UTF-8">
     <title>Desafio Card</title>
     <style>
-        /* ... */
+        .card{
+            cursor: pointer;
+        }
+        .curso{
+            display: inline-block;
+            vertical-align: top; /* Para se ambos se alinhar no topo */
+            border: solid 1px #CCC;
+            font-family: Verdana, sans-serif;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+            height: 300px;
+            width: 260px;
+            margin: 5px 20px;
+            padding: 5px;
+        }
+
+        .curso img{ 
+            width: 100%;
+            max-height: 50%; /* Com isso a imagem irá ocupar apenas 50% da altura do card */
+        }
+
+        .curso-info{
+            padding: 10px;
+            height: 90px;
+            overflow: hidden;
+        }
+        .curso-info h4{
+            font-size: 1.4em;
+            font-weight: 100; /*Letra vai ficar um pouco mmenos que negrito */
+            margin: 0; /* Com essa margin o conteudo de texto quebra o padrao do h4, e se encaixa no card */
+        }
+        .curso-info p{
+            font-weight: bold;
+        }
+        .curso-preco{
+            float: right;
+            padding: 10px 0;
+        }
+        .curso-preco .preco-de{
+            text-decoration: line-through;/* Risca o preço */
+            color: firebrick;
+        }
+        .curso-preco .preco-por{
+            font-weight: bold;
+            color: green;
+            font-size: 1.4em;
+        }
     </style>
 </head>
 
@@ -16,7 +61,7 @@
     <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
 
     <h2>Resultado</h2>
-    <div>
+    <div class="card">
         <div class="curso">
             <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
             <div class="curso-info">
