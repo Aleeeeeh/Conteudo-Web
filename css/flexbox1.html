@@ -1,12 +1,51 @@
 <!DOCTYPE html>
+<!-- verificar o resultado com tamanho de tela reduzido -->
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .big{
+            font-size:1.5em; /* 50% maior que as fontes padrões */
+        }
+        .flex-container{
+            display: flex;/* Por padrão flex é direction row */
+            flex-direction: column;
+            flex-direction: column-reverse;
+            flex-direction: row-reverse;
+            flex-direction: row;
+            width: 50%;
+            flex-wrap: wrap;/* Quebra de linha, respeitando a borda, ele quebro a linha para coubesse tudo dentro */
+
+            flex-wrap: wrap-reverse;
+            flex-flow: row wrap;
+            height: 200px;
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap;
+            /* Main Axis horizontal */
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-around; /* Espaço do lado direito e esquerdo dos elementos de forma igual*/
+            flex-direction: row-reverse;
+            justify-content: space-between;/*Espaço no meio */
+
+            /* Cross Axis vertical */
+            height: 400px;
+            align-items: stretch;/* Padrão */
+            align-items: baseline;/* Alinhar os itens pela base */
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+
+            /* Mais de uma linha, movimenta todo conteudo */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+        }
     </style>
 </head>
 

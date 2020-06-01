@@ -6,7 +6,33 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+         div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container{
+            display: flex;
+        }
+        /* Flex-basis é a dimensão do elemento dentro do main Axis */
+        .flex-container div{
+            flex-basis: 100px; /* Tem prioridade */
+            width: 200px;
+        }
+
+        .flex-container div:nth-child(4){
+            /* grow shrink basis, essa propriedade flex é shortcut ou seja só ela ja aplica 3 propriedades */
+            flex: 3 6 100px;
+        }
+        /* Ira pegar o shrink com width 300 e aumentar se for 600px */
+        .flex-container{
+            width: 300px;
+            width: 600px;
+        }
     </style>
 </head>
 

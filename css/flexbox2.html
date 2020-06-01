@@ -6,7 +6,49 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container div{
+            box-sizing: border-box;
+        }
+
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+        /* ´Pegar a terceira div para aplicar a estilização */
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+            order: 1;/* Peso maior, faz o 3 ser o último elemento, order=0 é o padrão */
+            order: 0;
+            order: -1;/*Peso menor que os demaiss, faz com que seja o primeiro a ser exibido */
+            /* aling-self tambem usado para alinhar elemento, no caso pegando o 3° elemento em especifico */
+            align-self: center;
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch;/* Default, ou seja o padrão */
+        }
+        /* Usando flex-grow iremos ocupar o espaço que estiver sobrando */
+        .flex-container div{
+            width: 100px; /* Cada div tem 100px */
+            flex-grow: 0;
+            flex-grow: 1; 
+        }
+        /*Cálculo flex-grow, no exemplo nossa div possui 600px, com flex-grow 1, cada elemento da div terá 100px, restando
+        200px, então com cada elemento tendo 1 de peso, temos 4, pegamos o 200px restando e dividimos por este 4, da 50, e
+        50 será somado aos 100 px que cada um tinha, ficando com 150px cada fechamos a div de 600px  */
+        .flex-container div:nth-child(1){
+            flex-grow: 2; 
+        }
+        /* A div como um todo terá 300px */
+        .flex-container{
+            width: 300px;
+            flex-shrink: 1;/*Irá encolher de forma igual */
+        }
+        /*Ou seja elemento 1 peso 5, os outros elementos por padrão com peso 1 da 8, pegamos o 300px dividimos por 8 result
+        multiplica pelo peso de cada um, no caso elemento 1 sera 5 x 37,5 que da 187,5 */
+        .flex-container div:nth-child(1){
+            flex-shrink: 5;/*Elemento 1 apenas terá peso 5, e irá encolher mais que os demais */
+        }
     </style>
 </head>
 
