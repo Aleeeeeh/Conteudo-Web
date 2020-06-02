@@ -10,7 +10,7 @@
         html,
         body {
             margin: 20px;
-            height: calc(100% - 40px);
+            height: calc(100% - 40px); /* Subtrai os 40 de margem cima e embaixo */
             background-color: lightgray;
         }
         
@@ -21,6 +21,41 @@
             font-size: 30px;
             border: solid 5px dodgerblue;
             background: #fff;
+        }
+        /* CSS GRID é bidimensional trabalha com linhas e colunas */
+        body{
+            display: grid;
+            grid-template-columns: 50% 50%; /* Definindo duas colunas cada uma ocupará 50% */
+            grid-template-columns: repeat(4, 8.33%, 8.33%, 8.33%);/*3 * 4 = 12 --- Ou seja 12 colunas cada uma ocupando 8.33 */
+            grid-template-columns: repeat(4, 8.33%); /*Teremos 4 colunas com 8.33% sem ocupar 100% de todo espaço, se colocarmos 12 irá ocupar*/
+            /* minmax(100px, 300px), tamanho minimo e máx de uma coluna */
+            grid-template-columns: 200px 20% 1fr;/* 1°coluna 200px a 2° 20% e 3° pega o restante */
+            grid-template-columns: 3fr 6fr 3fr;/* 3 fragmentos para a 1° coluna 6 para 2° e 3 fragmentos para 3° */
+            grid-template-rows: 50% 25% 12.5% 12.5%; /* Aplicado a 1°, 2°, 3° e 4° linha */
+            grid-template-rows: 100px 1fr; /*1° 100px. 2°1fr e os demais dividiram o restante do espaço */
+            grid-template-rows: 100px auto auto auto;
+        }
+
+        .d8 {/* Start começando da linha 2, e end terminando na linha 4 olhando em coluna, result-o d8 ocupará 2 células */
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-column-end: span 2;/* Mesma coisa de end: 4, fará ocupar duas células */
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-row-end: span 2;
+        }
+
+        .d10,
+        .d11 {
+            /* podem se sobrepor, no caso o 11 vai sobrepor o 10*/
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: span 1;
+        }
+        /* Com essa propriedade com valor positivo faz com que o 10 fique por cima do 11 */
+        .d10 {
+            z-index: 10;
         }
     </style>
 </head>
