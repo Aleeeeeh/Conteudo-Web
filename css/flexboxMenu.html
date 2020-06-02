@@ -54,6 +54,24 @@
         /* ==================== */
         /* Solução com Flex Box */
         /* ==================== */
+
+        .cabecalho{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /*Para o menu em si crescer*/
+        .menu{
+            flex-grow: 10;
+        }
+        /*Pois por padrão a ul é block */
+        .menu ul{
+            display: flex;
+        }
+        /*Margem de um link do outro de 10px horizontalmente */
+        .menu li{
+            margin: 0px 10px;
+        }
     </style>
 </head>
 
