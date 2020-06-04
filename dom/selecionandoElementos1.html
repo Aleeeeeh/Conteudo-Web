@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <!-- Selecionando elementos através da DOM (Document Object Model) -->
+    <script>              
+        document.getElementById('primeiro').classList.add('destaque') 
+        /* Pegando varios elementos através do nome */
+        const divs = document.getElementsByTagName('div')
+        /*Com isso pegamos um Html colections e existe coisas que não da pra fazer como ele, então transformamos em um array */
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        /*Outra forma de tranformar em array, é utilizando o operador spread*/
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        /* Pegando pela classe, e percorrendo com laço forOF, logo que para usar forIN precisaria ser um vetor */
+        const ultimoELemento = document.getElementsByClassName('ultimo')
+        for(let e of ultimoELemento){
+            e.classList.remove('destaque')
+        }
+    </script>
+</body>
+</html>

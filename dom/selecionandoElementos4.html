@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <!-- Para ver na prática, abrir o console no browser -->
+    <script>
+           function log() {
+            console.log(this)
+        }
+        /*Função atribuida para exibir no console */
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+        /*Pegando div ul do html */
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() /*Pega o elemento pai ou seja a div */
+        lista.childNodes.log()/*Traz os elementos da lista, inclusive o espaços no console consta com "texto" */
+
+        const primeiro = lista.firstChild
+        primeiro.log()
+        primeiro.nextSibling.log()/*Próximo elemento depois do selecionado */
+
+        const ultimo = lista.lastChild
+        ultimo.log()
+        ultimo.previousSibling.log()/* Elemento anterior */
+
+        lista.children.log()/*Traz só os elementos não conta os espaços */
+        lista.firstElementChild.log()/*1° elemento da lista */
+        lista.lastElementChild.log()/* último elemento da lista */
+        lista.parentNode.previousElementSibling.log()/* Div anterior da div da minha lista, ou seja a div com a tag p inicio */
+        lista.parentNode.nextElementSibling.log()/*Mesma lógica mas no caso a próxima div depois desta */
+
+        document.querySelectorAll('div ul li').log()
+    </script>
+</body>
+
+</html>

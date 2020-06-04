@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl"> <!--Host Language, indica a linguagem que máquina vai usar para fazer a pesquisa -->
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>//Trará um HTML COLECTIONS
+        console.log(document.forms)
+        /*Destá forma trará NODELIST */
+        console.log(document.getElementsByName('pesquisa'))
+        console.log(document.pesquisa)/*Nos traz o formulário completo */
+        console.log(document.pesquisa.q)/*Nos traz o input, contido dentro do formulário */
+        document.pesquisa.q.value = 'Linux Brasil'/*q é o name do input, value é o valor do inserido ao campo */
+        /* https://www.google.com.br/search?q=java&hl=pt-br, depois de ? são parâmetros, no exemplo estamos buscando sobre 
+        java, em português */
+        document.pesquisa.hl.value = 'en-us'
+        console.log(document.pesquisa.hl.selectedIndex)
+    </script>
+</body>
+
+</html>
