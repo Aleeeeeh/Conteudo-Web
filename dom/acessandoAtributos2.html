@@ -16,8 +16,25 @@
             <li>Copo Descartável</li>
         </ul>
     </div>
-    <script>
-        // ...
+    <script>//Mais ideal seria usar o id compras, feito dessa forma apenas para exemplo
+         const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul"...............')
+        console.log('childNodes', lista.childNodes)//Releembrando pegando filhos inclusive os espaços
+        console.log('destino', lista.destino)//Erro, só conseguimos acessar propriedades personalizados com getAttribute
+        console.log('getAttribute', lista.getAttribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        lista.setAttribute('destino', 'empresa')/* Alterar atributos */
+        lista.setAttribute('status', 'aberto')
+        lista.removeAttribute('destino')
+        console.log(lista.dataset.urgencia)/* Mostrará todas propriedades personalizadas, por recomenda nomear como data-... */
+        lista.dataset.urgencia = 4
+        console.log(lista.getAttribute('data-urgencia'))
+
+        // cuidados
+        const label = document.querySelector('label')
+        console.log(label.for)//Forma errada de acessar
+        console.log(label.htmlFor)//Forma correta de acessar o label
+        console.log(label.getAttribute('for'))//Ou desta forma
     </script>
 </body>
 

@@ -15,7 +15,27 @@
         <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
     </div>
     <script>
-        // ...
+        const img = document.querySelector('img')
+        console.log('getAttribute', img.getAttribute('src'))//Pegando os atributos da tag img,pela string
+        console.log('src', img.src)//Outra forma de acessar, podendo colocar qualquer coisa no parâmentro
+        console.log('["src"]', img['src'])
+        console.log('alt',img.alt)//Pegando a descrição da imagem
+
+        console.log('Elemento "img"...............')
+        console.log('NodeType', img.nodeType)//Tipo, mostrará um número no console, saberemos o tipo olhando a tabela 
+        console.log('NodeName', img.nodeName)//Nome do elemento ou seja IMG
+
+        const src = img.getAttributeNode('src')
+        console.log('Atributo "src"...............')
+        console.log('NodeType', src.nodeType)//Tipo do src, na tabela aponta que é um atributo, do img acima é um elem..
+        console.log('NodeName', src.nodeName)
+        console.log('NodeValue', src.nodeValue)//Seu valor é o link da imagem
+
+        const link = document.querySelector('a')
+        console.log('Elemento "a"...............')
+        console.log('href', link.href)//Link da tag a
+        console.log('firstChild.nodeType', link.firstChild.nodeType)//Pega o filho dele ou seja o texto dentro COD3R
+        link.firstChild.nodeValue = 'Novo Texto'//Aqui conseguimos pegar esse valor e atribuir outro ja que é textual
     </script>
 </body>
 
