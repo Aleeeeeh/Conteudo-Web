@@ -11,8 +11,26 @@
     <div>
         Classes
     </div>
-    <script>
-        // ...
+    <script>//Alguns exemplos com base na propriedade classList, usamos classList de uma forma diferente
+        const div = document.querySelector('div')
+        const classes = div.classList
+        classes.add('destaque')
+        classes.remove('destaque')
+        classes.toggle('destaque')//Quando remove, o toogle adiciona novamente
+        console.log(classes.contains('destaque'))//A classe destque está contida  na div ? TRUE
+        console.log(classes.length)//Quantas classes?
+        classes.toggle('destaque')//Como ja existia a classe destaque então toggle irá remover
+        console.log(classes.length)
+
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.length)
+
+        for(let c of classes) {
+            console.log(c)
+        }
+
+        classes.forEach(c => console.log(c))
     </script>
 </body>
 

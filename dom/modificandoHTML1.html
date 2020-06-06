@@ -9,7 +9,36 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector('body')
+
+        /*Criando uma div e adicionando */
+        const div1 = document.createElement('div')
+        div1.classList.add('destaque')
+        div1.innerHTML = 'Primeiro'
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo','valor') //Modificando atributo
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro'
+
+        const div3 = document.createElement('div')
+        div3.appendChild(p)
+        /*AppendChild serve para adicionarmos um elemento dentro de outro elemento*/
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        /* Adicionando um elemento dentro da div 3, e mostrando a posição dele */
+        const texto = document.createTextNode('Antes...')
+        div3.insertBefore(texto,div3.childNodes[0])//Indice zero ou seja dentro da div3 o text "antes.." virá primeiro
+
+        /*Clonando a div3 e atribuindo valor a div4, Quando removemos a div3, a div4 ficou com a cor da div3, por causa
+        do estilo.css que tem o filho 3 dessa cor*/
+        const div4 = div3.cloneNode(true)
+        body.appendChild(div4)
+        body.removeChild(div3)
     </script>
 </body>
 
