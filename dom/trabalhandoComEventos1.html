@@ -8,10 +8,22 @@
 </head>
 
 <body class="conteudo exercicio">
-    <div>
-        <a href="https://google.com.br">Google</a>
+    <div><!-- onclick="navegarem5s(event)", vantagem de usar o onclick, é que fica explicita a chamada -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        /*Quando clicado esperar 5 segundos até a página ser exibida*/
+        function navegarem5s(e){
+        e.preventDefault() /*Evitar o comportamento padrão*/
+        console.log('Saindo em 5s...')
+        setTimeout(() => {
+            const link = e.target /*Target é o elemento html que está sendo chamado*/
+            window.location.href = link.href  /*Com isso estamos substituindo o link do browser, saindo de onde estamos e indo para página inicial do google */
+        },5000)
+        }
+
+        /*Outra forma de vincular onclick, podemos passar o valor de tempo dentro do atributo la na tag*/
+        const evento = document.querySelector('[espera-um-pouco]')
+        evento.onclick = navegarem5s
     </script>
 </body>

@@ -31,6 +31,35 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        // const submit = document.querySelector('[wm-submit]')
+        // submit.onclick = function (e) {
+        //     e.preventDefault()
+        //e.target é o botao, parentNode que está envolvendo o botão no caso o formulário
+        //     const form = e.target.parentNode
+        //     const formData = new FormData(form)Dados do formulário
+        //     formData.append('ajax', true)Adicionando informação no formData
+        //     console.log(formData.get('q'))Resultado da pesquisa
+        //     console.log(formData.has('hl'))Verifica se existe esse campo
+
+        //     for (let dado of formData) {
+        //         console.log(dado)
+        //     }
+        // }
+
+        /* Código refatorado */
+        const form = document.forms[0]
+        form.onsubmit = function (e) {
+            e.preventDefault()
+
+            const form = e.target
+            const formData = new FormData(form)
+            formData.append('ajax', true)
+            console.log(formData.get('q'))
+            console.log(formData.has('hl'))
+
+            for (let dado of formData) {
+                console.log(dado)
+            }
+        }
     </script>
 </body>

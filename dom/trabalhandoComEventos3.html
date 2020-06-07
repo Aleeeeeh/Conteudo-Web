@@ -45,7 +45,25 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        //Arrastar elementos de um lado para o outro
+        const items = document.querySelectorAll('[wm-dropzone] .item')
+        items.forEach((item, index) => {
+            item.draggable = true //draggable como true ja conseguimos mover os elementos
+            item.id = item.id || `draggable-item-${index}`//Adicionar um id aos elementos
+            item.ondragstart = e =>//Quando começar arrastar um elemento faça 
+                e.dataTransfer.setData('item-id', e.target.id)//Quando mover para outro lado estaremos setando item-id ou seja o item em si sendo tranferido para o outro lado
+        })
+        /*Aqui é a lógica para concluirmos a tranferência para o lado azul*/
+        const dropzones = document.querySelectorAll('[wm-dropzone]')
+        dropzones.forEach(dropzone => {
+            dropzone.ondragover = e => e.preventDefault()//ondragover quando está arrastando os elemento previne a ação padrão, e permite que realizemos outra ação
+            dropzone.ondrop = function(e) {
+                const id = e.dataTransfer.getData('item-id')
+                const item = document.getElementById(id)
+                // e.target.appendChild(item)Nos permitiria tambem adicionar um elemento dentro do outro
+                dropzone.appendChild(item)//Adiciona o item 
+            }
+        })
     </script>
 </body>
 

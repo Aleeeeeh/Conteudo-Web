@@ -8,8 +8,21 @@
 </head>
 
 <body class="conteudo exercicio">
-    <div>Elemento</div>
+    <div>Alefe-MITO</div>
+    <!--O ojetivo é clicar e conseguir movimentar essa div na tela -->
     <script>
-        // ...
+        const item = document.querySelector('div')
+        item.style.position = 'absolute' /*Para que consigamos posicionar de forma absoluta*/
+
+        /*Função onmousemove associada a uma função arrow que recebe um evento */
+        item.onmousemove = e => {
+            item.style.cursos = 'move' /*Com isso nossa seta ja mostra a opção de mover na tela */
+            if (e.buttons) {/*Quando for disparado o evento do clique no elemento */
+                /*Eixo vertical e horizontal com relação ao topo e lado esquerdo da página */
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px`
+                item.style.left = `${e.clientX - (item.clientWidth / 2)}px`
+                /*cursor do mouse - metade do nosso elemento, de forma mais clara para que o cursor fique no meio*/
+            }
+        }
     </script>
 </body>
