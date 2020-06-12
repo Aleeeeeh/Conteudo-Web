@@ -1,0 +1,73 @@
+*{
+    box-sizing:border-box;
+}
+/* Importando fonte contida na pasta fonts */
+@font-face{
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+
+[wm-flappy]{
+    position: relative;
+    border:solid 5px dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    background-color: deepskyblue;
+    overflow: hidden; /*Tudo o que estiver fora da div ficará invisivel*/
+}
+
+.passaro{
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px);/*50% voltando 30px para que fique no centro horizontalmente */
+    bottom: 50%; /*E com relação ao fundo ficar com 50% de distancia, deixando no centro verticalmente */
+}
+
+.par-de-barreiras{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.barreira{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Bico do Cano*/
+.barreira .borda{
+    height: 30px;
+    width: 130px;
+    background:linear-gradient(90deg, #639301, #A5E82E);
+    border:2px solid #000
+}
+/*Corpo do Cano*/
+.barreira .corpo{
+    height: 40px;
+    width: 110px;
+    background:linear-gradient(90deg, #639301, #A5E82E);
+    border: 2px solid #000;
+    border: 2px solid #000;
+}
+
+.progresso{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: Pixel;
+    font-size: 70px;
+    z-index: 100;/*Para ficar na frente das barreiras que for passando */
+}
+
+.game-over {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    font-family: 'Pixel';
+    font-size: 80px;   
+    color: cornsilk;
+}
