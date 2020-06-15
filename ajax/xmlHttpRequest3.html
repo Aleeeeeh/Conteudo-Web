@@ -9,8 +9,42 @@
 
 <body class="conteudo exercicio">
     <h1>Estados</h1>
-
+    <!--Dessa vez consumir o arquivo estados.xml da pasta dados-->
     <script>
-        // ...
+        function ajax(config){
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.metodo, config.url, true)
+
+            //onreadystatechange será chamado sempre que o status da requisição mudar
+            xhr.onreadystatechange = e => {
+            //https://www.w3schools.com/xml/ajax_xmlhttprequest_create.asp, verificar os status do readyState para entender
+            if(xhr.readyState === 4) {
+                if(xhr.status === 200) {
+                    config.sucesso(xhr.responseXML)
+                } else if(xhr.status >= 400) {
+                    config.erro({
+                        codigo: xhr.status,
+                        texto: xhr.statusText
+                      })
+                   }
+                 }
+             }
+             xhr.send()
+        }
+        ajax({
+            url:"dados/estados.xml",
+            metodo:"get",
+            sucesso(resposta){
+                console.log(resposta)//Graças ao response.xml, o arquivo é exibido em forma de string
+                const estados = resposta.getElementsByTagName('estado')
+                const items = Array.from(estados).reduce(
+                    (html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, '') //String vazia que será valor inicial
+                document.body.insertAdjacentHTML('beforeend', `<ul>${items}</ul>`)
+            },
+            erro(e) {
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>

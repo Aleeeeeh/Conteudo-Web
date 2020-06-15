@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
         callback(null, `${Date.now()}_${file.originalname}`)
     }
 })
-/*Função single trazendo o input através de seu nome que é arquivo */
+/*Função single trazendo o input através de seu nome que é arquivo*/
 const upload = multer({storage}).single('arquivo')
 
 app.post('/upload', (req, res) => {
