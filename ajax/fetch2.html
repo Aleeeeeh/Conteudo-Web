@@ -28,7 +28,35 @@
         <button>Salvar</button>
     </form>
     <div id="resultado"></div>
+    <!--Fazer uma submissão de um formulário usando Fetch API-->
     <script>
-        // ...
+        document.usuarioForm.onsubmit = async e => {
+            e.preventDefault()
+
+            const form = e.target
+            const data = new FormData(form)
+
+            const options = {
+                method: form.method, //Pois o formulário tem um método
+                body: new URLSearchParams(data)
+            }
+            
+            const resultado = document.getElementById('resultado')
+            // fetch(form.action, options) //form.action é a rota que queremos disparar e obj option com metodos e dados 
+            //     .then(resp => resp.json())
+            //     .then(json => {
+            //     resultado.innerHTML = JSON.stringify(json)
+            // })
+            // .catch(e => {
+            //     resultado.innerHTML = e
+            // })
+            try{
+                const resp = await fetch(form.action, options)
+                const json = await resp.json()
+                resultado.innerHTML = JSON.stringify(json)
+            } catch(e) {
+                resultado.innerHTML = e
+            }
+        }
     </script>
 </body>

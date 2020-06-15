@@ -31,7 +31,14 @@ app.post('/upload', (req, res) => {
     })
 })
 
+//Função para tratar o post, para usarmos o Fetch API 2, retornando conteudo e id que foi enviado na req
 
+app.post('/formulario', (req, res) => {
+    res.send({
+        ...req.body,
+        id: 1
+    })
+})
 
 app.listen(8080, () => console.log('Servidor rodando na porta 8080'))
 
