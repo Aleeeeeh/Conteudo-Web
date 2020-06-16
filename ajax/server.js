@@ -35,8 +35,19 @@ app.post('/upload', (req, res) => {
 
 app.post('/formulario', (req, res) => {
     res.send({
-        ...req.body,
+        ...req.body, 
         id: 1
+    })
+})
+
+//Função para o Axios2
+
+app.get('/parOuImpar', (req, res) => {
+    //Forma de receber dados do servidor
+    //req.body exemplo acima, req.query através de ?:arg... e req.params parOuImpar/:1
+    const par = parseInt(req.query.numero) % 2 === 0
+    res.send({
+        resultado: par ? 'par' : 'impar'
     })
 })
 

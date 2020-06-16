@@ -14,6 +14,24 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+          // axios('parOuImpar?numero=10').then(resp => exibirResultado('get', resp.data)) PELA REQ.QUERY
+        
+        //Com req.params, 1° paramentro a rota e o segundo um objeto com o parametro com o numero 
+        axios.get('parOuImpar', {
+            params: {
+                numero: 10
+            }
+        }).then(resp => exibirResultado('get', resp.data))
+
+        //Utilizando o formulário da aula fetch 2, sua rota criado no server.js
+        axios.post('formulario', {
+            nome: 'Alefe',
+            sobrenome: 'Ferreira'
+        }).then(resp => exibirResultado('post', resp.data))
     </script>
 </body>

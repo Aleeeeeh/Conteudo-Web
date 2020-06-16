@@ -37,7 +37,7 @@
             const data = new FormData(form)
 
             const options = {
-                method: form.method, //Pois o formulário tem um método
+                method: form.method, //Pega o método do formulário
                 body: new URLSearchParams(data)
             }
             
@@ -50,6 +50,7 @@
             // .catch(e => {
             //     resultado.innerHTML = e
             // })
+            
             try{
                 const resp = await fetch(form.action, options)
                 const json = await resp.json()
