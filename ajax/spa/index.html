@@ -25,6 +25,34 @@
     </nav>
     <div class="pagina"></div>
     <script>
-        // ...
+        function navegarViaAjax(url, seletor, push=true){
+            if(!url || !seletor) return
+            const elemento = document.querySelector(seletor)
+            fetch(url)
+            .then(resp => resp.text())
+            .then(html => {
+                elemento.innerHTML = html
+                if(push){
+                    history.pushState({seletor}, null, url)//1° param estado,2° titulo da pagina,3° url da pagina
+                }
+            })
+        }
+
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value //Neste caso Colchetes exatamente assim ['wm-link']
+            const seletorDestino = link.attributes['wm-destino'].value
+
+            link.onclick = e => {
+                e.preventDefault()
+                navegarViaAjax(url, seletorDestino)
+            }
+        })
+        //Função pop para tirar o primeiro elemento da pilha, a pilha é o historico de navegação,e quando voltar ir
+        //tirando elementos da pilha, no caso, voltar de linguagens para series, aparencendo na url tambem
+        window.onpopstate =e => {
+            if(e.state) {
+                navegarViaAjax(window.location.href, e.state.seletor, false)//Seguindo parametro da função navegarViaAjax
+            }
+        }
     </script>
 </body>
