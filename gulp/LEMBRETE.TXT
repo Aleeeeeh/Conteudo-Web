@@ -1,0 +1,18 @@
+==== Gulp ====
+O Gulp é um kit de ferramentas que ajuda a automatizar tarefas chatas ou demoradas no desenvolvimento
+de seu projeto.
+
+=== INSTALAÇÃO DO GULP NO TERMINAL ===
+npm i -g gulp-cli
+gulp --version Para ver a versão
+gulp --help Para ajuda
+
+=== FUNDAMENTOS DO GULP 1 E 2 ====
+Não esquecer de entrar na pasta basico para executar o comando de gulp e encontrar o arquivo gulpfile.js e realizar
+a cópia dos arquivos TXT da pastaA para a pastaB
+
+INTERFACE DE LINHA DE COMANDOS - cli
+Inteface de linha de comandos que nos ajuda a trabalhar com as linguagens, frameworks etc...
+
+=== Babel ===
+Pega nosso código moderno e deixa o mais compativel possivel para os browsers

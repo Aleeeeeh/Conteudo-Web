@@ -1,0 +1,4 @@
+====REMOVER PASTA NO GITHUB======
+git rm -r nomedapasta
+git commit -m "Qualquer coisa"
+git push origin master
