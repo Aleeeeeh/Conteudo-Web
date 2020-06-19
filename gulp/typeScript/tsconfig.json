@@ -4,7 +4,13 @@
     ],
     "compilerOptions": {
         "rootDir": "src",
-        "noImplicitAny": true,
-        "target": "es5"
+        "noImplicitAny": true, 
+        "target": "es5" //Versão a ser gerado do código javascript
     }
 }
+
+/* Arquivo que mostra com está configurado o meu arquivo typescript */
+
+/* "noImplicitAny" No exemplo colocamos o tipo implicitamente que é o 'vendavel', se não tiver uma classe em especifico
+podemos colocar any no tipo, se optar por não colocar tipo,colocar false nessa opção, DETALHE colocando um tipo
+traz um nivel de compatibilidade maior ao converter para javascript*/

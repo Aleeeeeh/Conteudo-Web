@@ -7,3 +7,4 @@ export class Carro implements Vendavel {
     nome: string
     preco: number
 }
+

@@ -16,3 +16,11 @@ Inteface de linha de comandos que nos ajuda a trabalhar com as linguagens, frame
 
 === Babel ===
 Pega nosso código moderno e deixa o mais compativel possivel para os browsers
+
+=== TypeScript ===
+TypeScript é um superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns
+outros recursos a linguagem.Não é interpretada pelo node, mais por exemplo com gulp conseguimos fazer um processo de 
+conversão para javascript e assim ser interpretado normalmente pelo node.
+
+=== Sass ===
+É um pré-processador Css, que disponibiliza mais funcionalidades que não estão disponiveis no Css.
