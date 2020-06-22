@@ -1,3 +1,4 @@
+//Arquivo responsável por fazer toda navegação da nossa aplicação
 (function () {
     function marcarLinkComoSelecionado(hash) {
         const links = document.querySelectorAll(`[wm-link]`)

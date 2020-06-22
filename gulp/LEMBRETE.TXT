@@ -1,6 +1,6 @@
 ==== Gulp ====
 O Gulp é um kit de ferramentas que ajuda a automatizar tarefas chatas ou demoradas no desenvolvimento
-de seu projeto.
+de seu projeto.("Nas aulas foi usada a versão ddo gulp 4")
 
 === INSTALAÇÃO DO GULP NO TERMINAL ===
 npm i -g gulp-cli
@@ -24,3 +24,13 @@ conversão para javascript e assim ser interpretado normalmente pelo node.
 
 === Sass ===
 É um pré-processador Css, que disponibiliza mais funcionalidades que não estão disponiveis no Css.
+
+=== Spa - Single Page Application ===
+As aplicações e os sites SPA, fazem uma transição entre os templates carregados, sem reload de página e sem que o usuário 
+viaje de uma página para outra.
+
+=== LEMBRETES ===
+No spa, no arquivo deps.js o caminho encontramos dentro da pasta node_modules na pasta font-awesome, depois Css, ir 
+no primeiro arquivo, depois com direito ir em "copy relative path".
+
+WorkFlow - Fluxo de trabalho
