@@ -1,0 +1,18 @@
+=========== WebPack =============
+Gup e Webpack possuem finalidades diferentes. Gulp é um build system para construir qualquer coisa, seja uma 
+aplicação web ou o que você desejar. Webpack é um module bundler, ele agrupa scripts, css, imgs e seja lá o que 
+você quiser e garante uma maneira unificada de carregar todos esses bundles em sua aplicação.
+WebPack é baseado no sistema de módulos, javascript possui um sistema de módulo onde o node é baseado como commomJs
+que possui o require e o module.exports, e no ecmaScript2015 veio modulo de import e exports.
+
+=== LEMBRETES === 
+ - Npm start dentro de webpack, depois de pessoa, principal esteja com import e export aparecerá a pasta dist, com
+arquivo main.js
+ - Para rodar, npm start && node dist/main.js 
+ - Para rodar outros arquivos colocar o import, principal no exemplo é o ponto de partida, se colocarmos o import
+ de outro arquivo no principal.js será chamado, ou colocar import em um arquivo que o principal está importando
+ também irá funcionar
+  - Quando criamos loader para o css, apenas com o link de ponto de partida que estiver referenciando dentro do
+  documento html ja se aplica o estilo do css
+ - Com a dependencia mini-css-extract-plugin o style-loader fica obsoleto, com ele geramos um novo arquivo css
+ , depois linkamos no documento HTML

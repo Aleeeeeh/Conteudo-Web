@@ -1,6 +1,7 @@
 ==== Gulp ====
 O Gulp é um kit de ferramentas que ajuda a automatizar tarefas chatas ou demoradas no desenvolvimento
 de seu projeto.("Nas aulas foi usada a versão ddo gulp 4")
+LOADERS - É a estrutura usada no gulpfile para mover ou modificar os arquivos
 
 === INSTALAÇÃO DO GULP NO TERMINAL ===
 npm i -g gulp-cli
