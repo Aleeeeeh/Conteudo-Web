@@ -1,0 +1,5 @@
+==== Bootstrap ===
+Conseguimos baixar direto pelo site ou pelo  gerenciador de pacotes do Node. As vantagens de baixar pelo npm é que
+temos as pastas com sass entre outros arquivos que compõe o Bootstrap.
+Podemos tambem referenciar com base em cdn, ou seja um servidor com alto desempenho que dispoe os arquivos estáticos
+de uma forma confiável e rápida. 
