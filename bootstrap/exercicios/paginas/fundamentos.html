@@ -63,7 +63,8 @@
     <hr>
 
     <!-- Flex, sm responsividade apenas de dispositivos medios para cima, mobile ja não se aplica -->
-    <div class="d-sm-flex flex-column-reverse p-2"> <!-- d-flex habilita o uso do flexbox-->
+    <div class="d-sm-flex flex-column-reverse p-2">
+        <!-- d-flex habilita o uso do flexbox-->
         <div class="align-self-end">1</div>
         <div class="align-self-center">2</div>
         <div class="align-self-start">3</div>
@@ -77,6 +78,14 @@
     <hr>
 
     <!-- Imagens -->
+    <div class="p-2">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="mx-auto d-block" width="400">
+        <!-- mx-eixo x, dar margens auto, block pega a linha inteira -->
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-thumbnail" width="400">
+        <!--Com bordas, tambem fluida-->
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-fluid" width="400">
+        <!--Fluida, se ajusta de acordo com a tela sem extrapolar a div -->
+    </div>
 
     <h1 class="mt-5">6. Float -
         <small>
@@ -86,6 +95,11 @@
     <hr>
 
     <!-- Float -->
+    <div class="my-1 p-3 float-left">1</div>
+    <div class="my-1 p-3 float-right">2</div>
+    <div class="my-1 p-3 float-lg-right float-xl-left">3</div> <!--lg largo, xl extra largo -->
+</div>
+
 </div>
 
 <style>

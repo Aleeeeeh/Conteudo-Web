@@ -2,4 +2,12 @@
 Conseguimos baixar direto pelo site ou pelo  gerenciador de pacotes do Node. As vantagens de baixar pelo npm é que
 temos as pastas com sass entre outros arquivos que compõe o Bootstrap.
 Podemos tambem referenciar com base em cdn, ou seja um servidor com alto desempenho que dispoe os arquivos estáticos
-de uma forma confiável e rápida. 
+de uma forma confiável e rápida.
+
+=== Popper js ===
+Usado para fazer a parte de tooltips, no console do brownser depois de criado tooltip no html, com esse código
+conseguimos ver o componente ao encostar no botão:
+$('[data-toggle="tooltip"]')
+$('[data-toggle="tooltip"]').tooltip()
+logo após modificar o arquivo de navegação.js responsável pela requisição ajax, usando regex, conseguimos colocar 
+$('[data-toggle="tooltip"]').tooltip(), que irá funcionar o tooltip normalmente

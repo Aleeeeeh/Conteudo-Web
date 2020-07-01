@@ -2,7 +2,7 @@
     function navegarViaAjax(hash) {
         if (!hash) return
 
-        const link = document.querySelector(`[wm-link='${hash}']`)
+        const link = document.querySelector(`[wm-link='${hash}']`)//wm-link contido em index.html
         if(!link) return
 
         const destino = document.querySelector('[wm-link-destino]')
@@ -12,6 +12,7 @@
             .then(resp => resp.text())
             .then(html => {
                 destino.innerHTML = html
+                eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])//Usando regex
             })
     }
 

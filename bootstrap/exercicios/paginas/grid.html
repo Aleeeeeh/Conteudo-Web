@@ -21,31 +21,93 @@
     <hr>
 
     <!-- Grid Básica -->
+    <div class="container-fluid"><!--Fluid ocupa tela toda, container ficaria no centro fixo -->
+        <div class="row"> <!--col, devices extra pequenos, essas linhas dividirão as colunas de forma igualitários -->
+            <div class="col bg-primary">1</div>
+            <div class="col bg-danger">2</div>
+            <div class="col bg-warning">3</div>
+            <div class="col bg-info">4</div>
+            <div class="col bg-secondary">5</div>
+        </div>
+        <!-- Col-4 ocupando 4 colunas das 12 totais, col-5 5 colunas ... -->
+        <div class="row mt-3">
+            <div class="col bg-danger">1</div>
+            <div class="col-4 bg-warning">2</div>
+            <div class="col-5 bg-info">3</div>
+            <div class="col bg-secondary">4</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">2. Grid Responsiva</h1>
     <hr>
 
     <!-- Grid Responsiva -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">1</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">2</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">3</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">4</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">5</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">6</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">7</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">8</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">9</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">10</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">11</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">12</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">3. Quebra de Linha</h1>
     <hr>
 
     <!-- Quebra de Linha -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 bg-primary">1</div>
+            <div class="col-3 bg-danger">2</div>
+            <div class="col-7 bg-success">3</div><!--Quebra de linha por extrapolar as 12 colunas -->
+            <div class="w-100"></div><!--Quebra de linha, irá ocupar uma linha inteira -->
+            <div class="col-3 bg-warning">4</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">4. Ordem</h1>
     <hr>
 
-    <!-- Ordem -->
+    <!-- Ordem, order de 1 a 12 respeintando as 12 colunas, ordem crescente -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 order-5 bg-success">1</div>
+            <div class="col-4 order-12 bg-danger">2</div>
+            <div class="col-4 order-1 bg-secondary">3</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">5. Offset</h1>
     <hr>
 
-    <!-- Offset -->
+    <!-- Offset, para fazer deslocamento de um elemento com base em colunas-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 offset-7 bg-primary">1</div>
+            <div class="col-4 offset-3 bg-danger">2</div>
+            <div class="col-6 offset-1 bg-warning">3</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">6. Alinhamento</h1>
     <hr>
 
-    <!-- Alinhamento -->
+    <!-- Alinhamento com base no align-self do flexbox -->
+    <div class="container-fluid">
+        <div class="row h-300"><!-- H-300 Css interno da cod3r -->
+            <div class="col-4 align-self-end bg-primary">1</div>
+            <div class="col-4 align-self-center bg-danger">2</div>
+            <div class="col-4 align-self-start bg-warning">3</div>
+        </div>
+    </div>
 </div>
 
 <style>
