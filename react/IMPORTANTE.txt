@@ -1,0 +1,5 @@
+Para começarmos um projeto em react, entramos na pasta dele e damos o comando:
+npm i -g create-react-app, com isso cria a versão inicial da nossa aplicação já com build configurado.
+Para criar o projeto:
+create-react-app nomedoprojeto
+Depois de criado entramos na pasta do projeto, e damos npm start.

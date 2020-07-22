@@ -11,3 +11,8 @@ $('[data-toggle="tooltip"]')
 $('[data-toggle="tooltip"]').tooltip()
 logo após modificar o arquivo de navegação.js responsável pela requisição ajax, usando regex, conseguimos colocar 
 $('[data-toggle="tooltip"]').tooltip(), que irá funcionar o tooltip normalmente
+
+
+======= Projeto Galeria =========
+Para que o webPack crie a pasta build, usamos comando npm run build, especificado no próprio package.json.
+A maioria dos arquivos scss são dos pacotes instalados, apenas o custom.scss foi criado.
