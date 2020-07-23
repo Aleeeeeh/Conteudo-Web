@@ -1,16 +1,23 @@
 import React, {Component} from 'react'
-
+//USAMO THIS NESSE CONTEXTO DE CLASSES
 export default class Saudacao extends Component {
-
+    //Estado podemos alterar
     state = {
         tipo:this.props.tipo,
         nome:this.props.nome
     }
 
+    constructor(props){
+        super(props)
+        // bind(this)para referenciar ao componente atual no caso o setTipo (campo tipo), com isso não é necessário
+        //a função arrow com evento no parâmetro, pois já está sendo referenciado
+        this.setTipo = this.setTipo.bind(this)
+    }
+
     setTipo(e){
         this.setState({tipo: e.target.value})
     }
-
+    //Com setNome usamos uma arrow function no onChange para disparar um evento e conseguir alterar o valor
     setNome(e){
         this.setState({nome:  e.target.value})
     }
@@ -21,7 +28,7 @@ export default class Saudacao extends Component {
             <div>
                 <h1>{tipo} {nome} !</h1>
                 <hr/>
-                <input type="text" placeholder="Tipo" value={tipo} onChange={e => this.setTipo(e)}/>
+                <input type="text" placeholder="Tipo" value={tipo} onChange={this.setTipo}/>
                 <input type="text" placeholder="Nome" value={nome} onChange={e => this.setNome(e)}/>
             </div>
         )

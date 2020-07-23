@@ -1,11 +1,15 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import  Saudacao from './componentes/Saudacao'
+import Pai from './componentes/Pai'
+import Filho from './componentes/Filho'
 
 //id root contido no arquivo index.html na pasta public, renderizando arquivo jsx no primeiro parâmetro
 
 ReactDom.render(
     <div>
-        <Saudacao tipo="Bom dia" nome="Alane"/>
+        <Pai nome='Alefe' sobrenome='Silva'>
+        <Filho nome='Alane' />
+        <Filho nome='Ayron' />
+        </Pai>
     </div>, 
     document.getElementById('root'))
